@@ -136,3 +136,4 @@ manager.addProduct('Producto prueba', 'Este es un producto prueba', 200, 'Sin im
     .then(() => manager.getProducts())
     .then(() => manager.addProduct('Producto prueba', 'Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25))
     .then(() => manager.getProducts())
+    .then(() => manager.getProductByID(2))
