@@ -8,15 +8,16 @@ class ProductManager{
     addProduct(title, description, price, thumbnail, code, stock){
         // Validacion de campos obligatorios
         if(!title || !description || !price || !thumbnail || !code || !stock){
-            console.error(`Todos los campos son obligatorios`)
+            console.error('Todos los campos son obligatorios')
             return
         }
        
         // Validacion del campo codigo
         if (this.products.some(product => product.code === code)) {
-        console.error("Ya existe un producto con ese código.")
+        console.error('Ya existe un producto con ese código.')
         return
         }
+        
         //Propiedades de los productos 
         const product = {
             id : this.addNextId,
@@ -39,13 +40,14 @@ class ProductManager{
     getProductByID(id){
         console.log('Producto: ',this.products.filter(product => product.id == id))
     }
+
+
 }
 /* - Nueva instancia de la clase ProductManager 
     - Ingreso de productos y testeo del array
-    - busqueda por ID */ 
+    - busqueda por ID*/
 const productManager1 = new ProductManager()
-productManager1.addProduct('Titulo1','Descripcion1', 10, 'Thumbnail1', 40, 70)
-productManager1.addProduct('Titulo2', 'Descripcion2', 20, 'Thumbnail2', 50, 80)
-productManager1.addProduct('Titulo3', 'Descripcion3', 30, 'Thumbnail3', 60, 90)
+/* productManager1.addProduct('Producto prueba','Este es un producto prueba', 200, 'Sin imagen', 'abc123', 25)
+productManager1.addProduct('Otro producto prueba','Este es otro producto prueba', 127, 'Sin imagen', 'abc124', 6) */
 productManager1.getProducts()
 productManager1.getProductByID(2)
