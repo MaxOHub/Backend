@@ -153,19 +153,11 @@ class ProductManager {
 
 // Ejemplo de uso
 const manager = new ProductManager()
-/* manager.addProduct('Producto prueba 1', 'Este es un producto prueba', 150, 'Sin imagen', 'abc1', 100)
+manager.addProduct('Producto prueba 1', 'Este es un producto prueba', 150, 'Sin imagen', 'abc1', 100)
 .then(() => manager.getProducts())
 .then(() => manager.deleteProduct(1))
 .then(() => manager.addProduct('Producto prueba 2', 'Este es un producto prueba', 150, 'Sin imagen', 'abc4', 100))
 .then(() => manager.getProducts())
 .then(()=> manager.modifyProductProperty(2,'title','MODIFICADO'))
 .then(() => manager.getProducts())
- */
 
-Promise.all([
-    agregarProducto = await manager.addProduct('Producto prueba 1', 'Este es un producto prueba', 150, 'Sin imagen', 'abc1', 100),
-   imprimir = await manager.getProducts(),
-   modificar = await manager.modifyProductProperty(1,'title','MODIFICADO'),
-   imprimir2 = await manager.getProducts()
-])
-.then(([agregarProducto, imprimir, modificar, imprimir2]) => console.log( imprimir2))

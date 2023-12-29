@@ -84,16 +84,16 @@ class ProductManager {
         try {
             const index = this.products.findIndex(product => product.id === id);
             if (index === -1) {
-                console.error('No se encontró un producto con ese ID.');
+                console.error('No se encontró un producto con ese ID.')
             }
     
             // Actualizar la propiedad específica del producto
-            this.products[index][propertyName] = updatedValue;
+            this.products[index][propertyName] = updatedValue
     
             // Guardar la lista actualizada como JSON de manera asincrónica
-            await this.saveProductsToJson();
+            await this.saveProductsToJson()
     
-            console.log('Propiedad del producto modificada correctamente.');
+            console.log('Propiedad del producto modificada correctamente.')
         } catch (error) {
             console.error('Error al modificar la propiedad del producto:', error.message);
         }
@@ -104,20 +104,20 @@ class ProductManager {
      // Método asincrónico para eliminar un producto por ID
     async deleteProduct(id) {
         try {
-            const index = this.products.findIndex(product => product.id === id);
+            const index = this.products.findIndex(product => product.id === id)
             if (index === -1) {
-                console.log('No se encontró un producto con ese ID.');
+                console.log('No se encontró un producto con ese ID.')
             }
 
             // Eliminar el producto de la lista
-            this.products.splice(index, 1);
+            this.products.splice(index, 1)
 
             // Guardar la lista actualizada como JSON de manera asincrónica
-            await this.saveProductsToJson();
+            await this.saveProductsToJson()
 
-            console.log('Producto eliminado correctamente.');
+            console.log('Producto eliminado correctamente.')
         } catch (error) {
-            console.error('Error al eliminar el producto:', error.message);
+            console.error('Error al eliminar el producto:', error.message)
         }
     } 
 }
